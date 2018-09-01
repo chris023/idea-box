@@ -18,15 +18,19 @@
     </form>
   </header>
   <main>
-    <input type="search">
+    <input type="search" placeholder="Search">
     <section class='js-idea-list'>
       <article class='js-idea' id='idea-num0'>
-        <h2>Example Idea 1</h2>
-        <img class='delete-ico' src='img/delete.svg'>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate veniam corporis reiciendis consequatur nihil soluta voluptatum itaque sed natus praesentium!</p>
-        <img class = 'upvote-ico' src='img/upvote.svg'>
-        <img class = 'downvote-ico' src='img/downvote.svg'>
-        <p>quality: swill</p>
+        <div class='js-idea--container1'>
+          <h2>Example Idea 1</h2>
+          <div class='ico delete-ico'></div>
+        </div>
+        <p class='js-idea--body'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate veniam corporis reiciendis consequatur nihil soluta voluptatum itaque sed natus praesentium!</p>
+        <div class='js-idea--container2'>
+          <div class = 'ico upvote-ico'></div>
+          <div class = 'ico downvote-ico'></div>
+          <p class='quality'>quality: swill</p>
+        </div>
       </article>
     </section>
   </main>
