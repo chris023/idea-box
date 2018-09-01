@@ -20,10 +20,19 @@ $('.idea-input--submit').on('click', function(e) {
 })
 
 function createNewIdea(title, body) {
-$('.js-idea-list').prepend(`<article class='js-idea'><h2> ${title}</h2>
-<img class='delete-ico'src='img/delete.svg'>
-<p>${body}</p><img class = 'upvote-ico' src='img/upvote.svg'><img class = 'downvote-ico' 
-src='img/downvote.svg'><p class = "quality">quality: swill</p></article>`);
+$('.js-idea-list').prepend(
+    `<article class='js-idea' id='idea-num0'>
+      <div class='js-idea--container1'>
+        <h2>${title}</h2>
+        <div class='ico delete-ico'></div>
+      </div>
+      <p class='js-idea--body'>${body}</p>
+        <div class='js-idea--container2'>
+        <div class = 'ico upvote-ico'></div>
+        <div class = 'ico downvote-ico'></div>
+        <p class='quality'>quality: swill</p>
+      </div>
+    </article>`);
 }
 
 $('.js-idea-list').on('click', function(e){
@@ -46,7 +55,7 @@ $('.js-idea-list').on('click', function(e){
   }
 
   if ($(e.target).hasClass('delete-ico')) {
-    $(e.target).parent().remove()
+    $(e.target).parent().parent().remove()
   }
 })
 
