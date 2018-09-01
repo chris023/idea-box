@@ -1,3 +1,5 @@
+$(document).ready(getIdeasFromStorage);
+
 $('.idea-input').on('keyup', function(e) {
  if ($(e.target).hasClass('idea-input--title') || ($(e.target).hasClass('idea-input--body'))) 
  { if ($('idea-input--title').val() !== '' && $('idea-input--body').val() !== '') 
@@ -14,6 +16,7 @@ $('.idea-input--submit').on('click', function(e) {
     var title = $('.idea-input--title').val();
     var body = $('.idea-input--body').val();
     createNewIdea(title, body);
+    localStorage.setItem("js-idea-list", JSON.stringify($('.js-idea-list').html()));
 })
 
 function createNewIdea(title, body) {
@@ -47,3 +50,10 @@ $('.js-idea-list').on('click', function(e){
   }
 })
 
+function getIdeasFromStorage() {
+  var ideasList = JSON.parse(localStorage.getItem('js-idea-list'));
+  if (ideasList) { 
+    $('.js-idea-list').html(ideasList)
+  }
+
+}
