@@ -16,14 +16,18 @@ $('.idea-input--submit').on('click', function(e) {
     var title = $('.idea-input--title').val();
     var body = $('.idea-input--body').val();
     createNewIdea(title, body);
-    localStorage.setItem("js-idea-list", JSON.stringify($('.js-idea-list').html()));
+    updateLocalStorage();
 })
+
+function updateLocalStorage() {
+  localStorage.setItem("js-idea-list", JSON.stringify($('.js-idea-list').html()));
+}
 
 function createNewIdea(title, body) {
 $('.js-idea-list').prepend(
     `<article class='js-idea' id='idea-num0'>
       <div class='js-idea--container1'>
-        <h2>${title}</h2>
+        <h2 class = 'js-idea--title'>${title}</h2>
         <div class='ico delete-ico'></div>
       </div>
       <p class='js-idea--body'>${body}</p>
@@ -40,8 +44,10 @@ $('.js-idea-list').on('click', function(e){
     var $targetQuality = $($(e.target).siblings('.quality')[0])
     if ($targetQuality.text() === 'quality: swill') {
       $targetQuality.text('quality: plausible')
+      updateLocalStorage();
       } else if ($targetQuality.text() === 'quality: plausible') {
       $targetQuality.text('quality: genius')
+      updateLocalStorage();
     }
   }
 
@@ -49,13 +55,16 @@ $('.js-idea-list').on('click', function(e){
     var $targetQuality = $($(e.target).siblings('.quality')[0])
     if ($targetQuality.text() === 'quality: genius') {
       $targetQuality.text('quality: plausible')
+      updateLocalStorage();
       } else if ($targetQuality.text() === 'quality: plausible') {
       $targetQuality.text('quality: swill')
+      updateLocalStorage();
     }
   }
 
   if ($(e.target).hasClass('delete-ico')) {
     $(e.target).parent().parent().remove()
+    updateLocalStorage();
   }
 })
 
@@ -66,3 +75,17 @@ function getIdeasFromStorage() {
   }
 
 }
+
+$('.search').on('keyup', function(e) {
+ var ideas = $('.js-idea')
+ var searchFilter = $('.search').val()
+ for (var i = 0; i < ideas.length; i++) {
+  var title = $($(ideas[i]).children('.js-idea--title')[0]).text()
+  var body = $($(ideas[i]).children('.js-idea--body')[0]).text()
+  if (title.includes(searchFilter) || body.includes(searchFilter)) {
+    $(ideas[i]).removeClass('hidden')
+  } else {
+    $(ideas[i]).addClass('hidden')
+  }
+ }
+})

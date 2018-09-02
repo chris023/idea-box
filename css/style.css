@@ -133,6 +133,10 @@ input::placeholder {
   margin: 1em;
 }
 
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width) {
   
   input {
