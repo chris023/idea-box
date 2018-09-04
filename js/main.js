@@ -81,10 +81,6 @@ $('.search').on('keyup', function(e) {
  var searchFilter = $('.search').val().toLowerCase();
 
  for (var i = 0; i < ideas.length; i++) {
-  $(ideas[i]).removeClass('hidden')
- }
-
- for (var i = 0; i < ideas.length; i++) {
   var title = $($($(ideas[i]).children('.js-idea--container1')[0]).children('.js-idea--title')[0]).text()
   var body = $($(ideas[i]).children('.js-idea--body')[0]).text()
   if (title.toLowerCase().includes(searchFilter) || body.toLowerCase().includes(searchFilter)) {
