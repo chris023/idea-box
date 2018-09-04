@@ -78,11 +78,16 @@ function getIdeasFromStorage() {
 
 $('.search').on('keyup', function(e) {
  var ideas = $('.js-idea')
- var searchFilter = $('.search').val()
+ var searchFilter = $('.search').val().toLowerCase();
+
  for (var i = 0; i < ideas.length; i++) {
-  var title = $($(ideas[i]).children('.js-idea--title')[0]).text()
+  $(ideas[i]).removeClass('hidden')
+ }
+
+ for (var i = 0; i < ideas.length; i++) {
+  var title = $($($(ideas[i]).children('.js-idea--container1')[0]).children('.js-idea--title')[0]).text()
   var body = $($(ideas[i]).children('.js-idea--body')[0]).text()
-  if (title.includes(searchFilter) || body.includes(searchFilter)) {
+  if (title.toLowerCase().includes(searchFilter) || body.toLowerCase().includes(searchFilter)) {
     $(ideas[i]).removeClass('hidden')
   } else {
     $(ideas[i]).addClass('hidden')
