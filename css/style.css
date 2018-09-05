@@ -94,7 +94,7 @@ input::placeholder {
 }
 
 .downvote-ico {
-  background-image: url('../img/downvote.svg');
+  background-image: url('../img/downvote.svg') ;
 }
 
 .downvote-ico:hover {
@@ -124,8 +124,9 @@ input::placeholder {
 }
 
 .ico {
-  width: 2em;
+  background-repeat: no-repeat;
   height: 2em;
+  width: 2em;
 }
 
 .quality {
@@ -137,10 +138,15 @@ input::placeholder {
   display: none;
 }
 
-@media screen and (max-width) {
+@media screen and (max-width: 600px) {
   
   input {
     width: 300px;
     padding: 0;
+  }
+
+  .ico {
+    height: 6vh;
+    width: 6vh;
   }
 }
