@@ -38,6 +38,16 @@ header h1 span {
   justify-content: center;
 }
 
+.idea-input--body {
+  border: solid 2px #D1D3D4;
+  font-size: 1em;
+  margin: 1.15vh;
+  padding: .3% 1%;
+  width: 55vw;
+  height: 1.45em;
+  resize: vertical;
+}
+
 input {
   border: solid 2px #D1D3D4;
   font-size: 1em;
@@ -64,6 +74,10 @@ input[type='submit']:hover {
 }
 
 input::placeholder {
+  color: #939598;
+}
+
+.idea-input--body::placeholder {
   color: #939598;
 }
 
@@ -118,7 +132,7 @@ input::placeholder {
   display: flex;
 }
 
-.js-idea--container2 div{
+.js-idea--container2 .ico{
   display: flex;
   margin: 1em;
 }
@@ -141,7 +155,7 @@ input::placeholder {
 @media screen and (max-width: 600px) {
   
   input {
-    width: 300px;
+    width: 85vw;
     padding: 0;
   }
 
@@ -149,4 +163,22 @@ input::placeholder {
     height: 6vh;
     width: 6vh;
   }
+
+  .js-idea {
+  width: 85vw;
+}
+
+.js-idea--container2 .ico{
+  margin: .5em;
+}
+
+.idea-input--body {
+  height: 3em;
+  overflow-wrap: normal;
+  padding-top: 0;
+  padding-bottom: 2em;
+  width: 85vw;
+}
+
+
 }

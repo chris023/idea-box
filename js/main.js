@@ -2,7 +2,7 @@ $(document).ready(getIdeasFromStorage);
 
 $('.idea-input').on('keyup', function(e) {
  if ($(e.target).hasClass('idea-input--title') || ($(e.target).hasClass('idea-input--body'))) 
- { if ($('idea-input--title').val() !== '' && $('idea-input--body').val() !== '') 
+ { if ($('.idea-input--title').val() !== '' && $('.idea-input--body').val() !== '') 
     {
       $('.idea-input--submit').attr('disabled', false);
     } else {
@@ -29,7 +29,6 @@ function updateLocalStorage(id) {
 
 function createNewIdea(title, body) {
   var id = new Date().getTime();
-  console.log(id);
 
   $('.js-idea-list').prepend(
     `<article class='js-idea' data-id='${id}'>
@@ -112,7 +111,7 @@ function getIdeasFromStorage() {
   }
 }
 
-$('.search').on('keyup', function(e) {
+$('.search').on('input', function(e) {
  var ideas = $('.js-idea')
  var searchFilter = $('.search').val().toLowerCase();
 
