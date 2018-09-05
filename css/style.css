@@ -118,6 +118,7 @@ input::placeholder {
 .js-idea h2 {
   color: #6D6E71;
 }
+
 .js-idea--body {
   color: #939598;
 }
@@ -165,20 +166,18 @@ input::placeholder {
   }
 
   .js-idea {
-  width: 85vw;
-}
+    width: 85vw;
+  }
 
-.js-idea--container2 .ico{
-  margin: .5em;
-}
+  .idea-input--body {
+    height: 3em;
+    overflow-wrap: normal;
+    padding-top: 0;
+    padding-bottom: 2em;
+    width: 85vw;
+  }
 
-.idea-input--body {
-  height: 3em;
-  overflow-wrap: normal;
-  padding-top: 0;
-  padding-bottom: 2em;
-  width: 85vw;
-}
-
-
+  .js-idea--container2 .ico{
+    margin: .5em;
+  }
 }
