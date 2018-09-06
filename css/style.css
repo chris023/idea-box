@@ -7,9 +7,9 @@ body {
 }
 
 main {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 header {
@@ -29,23 +29,6 @@ header h1 {
 
 header h1 span {
   color: #00A79D;
-}
-
-.idea-input {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.idea-input--body {
-  border: solid 2px #D1D3D4;
-  font-size: 1em;
-  margin: 1.15vh;
-  padding: .3% 1%;
-  width: 55vw;
-  height: 1.45em;
-  resize: vertical;
 }
 
 input {
@@ -77,6 +60,23 @@ input::placeholder {
   color: #939598;
 }
 
+.idea-input {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.idea-input--body {
+  border: solid 2px #D1D3D4;
+  font-size: 1em;
+  height: 1.45em;
+  margin: 1.15vh;
+  padding: .3% 1%;
+  resize: vertical;
+  width: 55vw;
+}
+
 .idea-input--body::placeholder {
   color: #939598;
 }
@@ -99,12 +99,11 @@ input::placeholder {
   background-image: url('../img/delete-hover.svg');
 }
 
-.upvote-ico {
-  background-image: url('../img/upvote.svg');
-}
-
 .upvote-ico:hover {
   background-image: url('../img/upvote-hover.svg');
+}
+.upvote-ico {
+  background-image: url('../img/upvote.svg');
 }
 
 .downvote-ico {
